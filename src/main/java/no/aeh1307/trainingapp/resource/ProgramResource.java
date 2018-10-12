@@ -16,7 +16,6 @@ public class ProgramResource {
 
   @GetMapping("/programs")
   public List<Program> retrieveAllStudents() {
-    System.out.println("Hello");
     return programService.getAllPrograms();
   }
 }
