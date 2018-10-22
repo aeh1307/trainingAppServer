@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Builder
@@ -26,7 +27,6 @@ public class Program {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long programId;
 
-  @NotBlank
   private int programDuration;
 
   @NotBlank
@@ -42,4 +42,7 @@ public class Program {
   @Temporal(TemporalType.TIMESTAMP)
   @LastModifiedDate
   private Date updatedAt;
+
+  @OneToMany(mappedBy = "program")
+  private List<Activity> activityList;
 }

@@ -20,4 +20,8 @@ public class ActivityService {
   public List<Activity> getAllActivities() {
     return activityRepository.findAll();
   }
+
+  public Activity addActivityToProgram(Activity activity) {
+    return activityRepository.save(activity);
+  }
 }
